@@ -1,0 +1,12 @@
+create-dmg \
+  --volname "WordPress Theme Analyzer" \
+  --volicon "app.icns" \
+  --background "background.png" \
+  --window-pos 200 120 \
+  --window-size 800 400 \
+  --icon-size 100 \
+  --icon "run.app" 200 190 \
+  --hide-extension "run.app" \
+  --app-drop-link 600 185 \
+  "WordPressThemeAnalyzer.dmg" \
+  "dist/"

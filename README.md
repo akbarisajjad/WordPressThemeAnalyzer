@@ -1,5 +1,41 @@
-متوجه شدم! در اینجا **مستندات کامل و جامع** برای پروژه شما آماده می‌کنم که به‌صورت حرفه‌ای برای انتشار در گیت‌هاب مناسب است. این مستندات شامل تمامی بخش‌های ضروری مانند توضیحات پروژه، نحوه نصب، نحوه استفاده، مشارکت، مجوز و اطلاعات تماس است.
 
+# WordPress Theme Analyzer
+
+![GitHub](https://img.shields.io/github/license/sajjadakbari/wordpress-theme-analyzer)
+![GitHub stars](https://img.shields.io/github/stars/sajjadakbari/wordpress-theme-analyzer)
+![GitHub issues](https://img.shields.io/github/issues/sajjadakbari/wordpress-theme-analyzer)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/sajjadakbari/wordpress-theme-analyzer)
+![GitHub contributors](https://img.shields.io/github/contributors/sajjadakbari/wordpress-theme-analyzer)
+
+## 📝 Overview
+**WordPress Theme Analyzer** is a powerful tool designed to analyze WordPress themes for **security**, **performance**, **SEO**, and **code quality** issues. It supports multiple file types, including PHP, JavaScript, CSS, TypeScript, SCSS, React, Vue, Tailwind CSS, Alpine.js, Blade, Twig, Markdown, YAML, JSON, and XML.
+
+This tool is developed by **Sajjad Akbari** from **SEO Kar** (https://seokar.click) and is intended to help developers and website owners ensure their WordPress themes are optimized, secure, and follow best practices.
+
+---
+
+## 🚀 Features
+- **Security Analysis**: Detects dangerous functions (e.g., `eval`, `exec`) and vulnerabilities (e.g., XSS, SQL Injection).
+- **Performance Analysis**: Identifies large files, unoptimized queries, and performance bottlenecks.
+- **SEO Analysis**: Checks for missing meta tags (e.g., description, keywords) in the theme.
+- **Code Quality Analysis**: Analyzes JavaScript, CSS, TypeScript, SCSS, React, Vue, Tailwind CSS, Alpine.js, Blade, Twig, Markdown, YAML, JSON, and XML files.
+- **Reporting**: Generates detailed reports in JSON and PDF formats.
+- **User-Friendly UI**: A graphical user interface (GUI) for easy interaction.
+- **Multilingual Support**: Supports multiple languages using `gettext`.
+
+---
+
+## 📦 Installation
+
+### Prerequisites
+- Python 3.6 or higher
+- wkhtmltopdf (for PDF report generation)
+
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sajjadakbari/wordpress-theme-analyzer.git
+   cd wordpress-theme-analyzer
 ---
 
 ### **فایل `README.md` کامل و جامع:**

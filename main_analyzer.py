@@ -5,8 +5,27 @@ import subprocess
 import logging
 import configparser
 import pdfkit
-from typing import List, Dict, TypedDict
+from typing import List, TypedDict
 from bs4 import BeautifulSoup
+
+# تعریف ساختار نتایج آنالیز
+class AnalysisResults(TypedDict):
+    errors: List[str]
+    warnings: List[str]
+    info: List[str]
+    security: List[str]
+    performance: List[str]
+    seo: List[str]
+
+# الگوی Singleton برای جلوگیری از ایجاد چند نمونه
+class SingletonMeta(type):
+    _instances = {}
+
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            instance = super().__call__(*args, **kwargs)
+            cls._instances[cls] = instance
+        return cls._instances[cls]
 
 class WordPressThemeAnalyzer(metaclass=SingletonMeta):
     def __init__(self, theme_path: str):
@@ -21,31 +40,10 @@ class WordPressThemeAnalyzer(metaclass=SingletonMeta):
         )
         self.setup_logging()
         self.load_config()
-# پیاده‌سازی Singleton
-class SingletonMeta(type):
-    _instances = {}
-
-    def __call__(cls, *args, **kwargs):
-        if cls not in cls._instances:
-            cls._instances[cls] = super().__call__(*args, **kwargs)
-        return cls._instances[cls]
-
-class WordPressThemeAnalyzer(metaclass=SingletonMeta):
-    def __init__(self, theme_path: str):
-        self.theme_path = theme_path
-        self.results: AnalysisResults = {
-            "errors": [],
-            "warnings": [],
-            "info": [],
-            "security": [],
-            "performance": [],
-            "seo": []
-        }
-        self.setup_logging()
-        self.load_config()
 
     def setup_logging(self) -> None:
-        if not logging.getLogger().hasHandlers():
+        logger = logging.getLogger()
+        if not logger.hasHandlers():
             logging.basicConfig(
                 level=logging.INFO,
                 format="%(asctime)s - %(levelname)s - %(message)s",

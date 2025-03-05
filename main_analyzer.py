@@ -8,15 +8,19 @@ import pdfkit
 from typing import List, Dict, TypedDict
 from bs4 import BeautifulSoup
 
-# تعریف نوع داده‌ای برای نتایج تحلیل
-class AnalysisResults(TypedDict):
-    errors: List[str]
-    warnings: List[str]
-    info: List[str]
-    security: List[str]
-    performance: List[str]
-    seo: List[str]
-
+class WordPressThemeAnalyzer(metaclass=SingletonMeta):
+    def __init__(self, theme_path: str):
+        self.theme_path = theme_path
+        self.results: AnalysisResults = AnalysisResults(
+            errors=[],
+            warnings=[],
+            info=[],
+            security=[],
+            performance=[],
+            seo=[]
+        )
+        self.setup_logging()
+        self.load_config()
 # پیاده‌سازی Singleton
 class SingletonMeta(type):
     _instances = {}

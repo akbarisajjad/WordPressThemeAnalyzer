@@ -1,0 +1,42 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  - package-ecosystem: "npm" # Example: npm for Node.js projects
+    directory: "/" # Location of package manifests (e.g., package.json)
+    schedule:
+      interval: "weekly" # Check for updates weekly
+    open-pull-requests-limit: 10 # Limit the number of open PRs created by Dependabot
+
+  - package-ecosystem: "pip" # Example: pip for Python projects
+    directory: "/" # Location of package manifests (e.g., requirements.txt)
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "maven" # Example: Maven for Java projects
+    directory: "/" # Location of package manifests (e.g., pom.xml)
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "gradle" # Example: Gradle for Java/Kotlin projects
+    directory: "/" # Location of package manifests (e.g., build.gradle)
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "bundler" # Example: Bundler for Ruby projects
+    directory: "/" # Location of package manifests (e.g., Gemfile)
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "composer" # Example: Composer for PHP projects
+    directory: "/" # Location of package manifests (e.g., composer.json)
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "docker" # Example: Docker for container images
+    directory: "/" # Location of Dockerfiles
+    schedule:
+      interval: "weekly"

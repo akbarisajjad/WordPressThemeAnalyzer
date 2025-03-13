@@ -11,7 +11,7 @@ setup(
     url="https://github.com/sajjadakbari/wordpress-theme-analyzer",
     packages=find_packages(),
     install_requires=[
-        "beautifulsoup4==4.9.3",
+        "beautifulsoup4==4.13.3",
         "pdfkit==1.0.0",
     ],
     classifiers=[
